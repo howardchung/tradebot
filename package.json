@@ -1,0 +1,23 @@
+{
+  "name": "tradebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js --ignore '*.json'",
+    "pm2": "pm2 start index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "request-promise-native": "^1.0.4",
+    "sentiment": "^4.0.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "pm2": "^2.7.2"
+  }
+}
