@@ -39,7 +39,7 @@ const rebalanceDividends = async (account, token) => {
     const diff = targetQuantity - currQuantity;
     if (Math.abs(diff) > 0) {
       // const price = Number(stock.high).toFixed(2);
-      const price = diff > 0 ? (Number(stock.high) * 1.01).toFixed(2) : (Number(stock.low) * 0.99).toFixed(2);
+      const price = diff > 0 ? (Number(stock.open) * 1.01).toFixed(2) : (Number(currentPosition.average_buy_price) * 0.99).toFixed(2);
       queuedOrders.push({token, account, instrument: stock.instrument, symbol: stock.symbol, quantity: Math.abs(diff), price, side: diff > 0 ? 'buy' : 'sell'});
     }
   }

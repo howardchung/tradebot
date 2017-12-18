@@ -9,6 +9,7 @@ const account = process.env.ROBINHOOD_ACCOUNT;
 const main = async () => {
   const auth = await request('https://api.robinhood.com/api-token-auth/', { method: 'POST', body: {username, password}, json: true });
   const { token } = auth;
+  console.log(token);
   const stockList = await buildStockList();
   while (true) {
     await strategy(account, token, stockList);
